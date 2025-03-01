@@ -12,6 +12,7 @@ struct ContentView: View {
   @Environment(\.colorScheme) var colorScheme
   
   @State var password: String = ""
+  @State var respondeMessage: String = ""
   
   var body: some View {
     GeometryReader { geometry in
@@ -35,13 +36,13 @@ struct ContentView: View {
                 .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
               
               VStack {
-                Image("PassMate Logo")
+                Image("PassWarrior Logo")
                   .resizable()
                   .frame(width: 124, height: 124)
                   .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
                   .padding(.top, 20.0)
                 
-                Text("PassMate")
+                Text("PassWarrior")
                   .font(.title)
                   .bold()
                   .padding(.top, 10.0)
@@ -80,7 +81,9 @@ struct ContentView: View {
                   .padding(.bottom, 10.0)
                 
                 Button {
-                  // TBD
+                  PasswordAnalyzer.analyzePassword(password: self.password) { response in
+                    print(response)
+                  }
                 } label: {
                   Text("Analyze")
                 }

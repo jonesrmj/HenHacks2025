@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		69ACC83C2D73815300000FB8 /* PassMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		69ACC8522D73815800000FB8 /* PassMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69ACC85C2D73815800000FB8 /* PassMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ACC83C2D73815300000FB8 /* PassWarrior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassWarrior.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ACC8522D73815800000FB8 /* PassWarriorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassWarriorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ACC85C2D73815800000FB8 /* PassWarriorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassWarriorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		69ACC83E2D73815300000FB8 /* PassMate */ = {
+		69ACC83E2D73815300000FB8 /* PassWarrior */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PassMate;
+			path = PassWarrior;
 			sourceTree = "<group>";
 		};
-		69ACC8552D73815800000FB8 /* PassMateTests */ = {
+		69ACC8552D73815800000FB8 /* PassWarriorTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PassMateTests;
+			path = PassWarriorTests;
 			sourceTree = "<group>";
 		};
-		69ACC85F2D73815800000FB8 /* PassMateUITests */ = {
+		69ACC85F2D73815800000FB8 /* PassWarriorUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PassMateUITests;
+			path = PassWarriorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		69ACC8332D73815300000FB8 = {
 			isa = PBXGroup;
 			children = (
-				69ACC83E2D73815300000FB8 /* PassMate */,
-				69ACC8552D73815800000FB8 /* PassMateTests */,
-				69ACC85F2D73815800000FB8 /* PassMateUITests */,
+				69ACC83E2D73815300000FB8 /* PassWarrior */,
+				69ACC8552D73815800000FB8 /* PassWarriorTests */,
+				69ACC85F2D73815800000FB8 /* PassWarriorUITests */,
 				69ACC83D2D73815300000FB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		69ACC83D2D73815300000FB8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69ACC83C2D73815300000FB8 /* PassMate.app */,
-				69ACC8522D73815800000FB8 /* PassMateTests.xctest */,
-				69ACC85C2D73815800000FB8 /* PassMateUITests.xctest */,
+				69ACC83C2D73815300000FB8 /* PassWarrior.app */,
+				69ACC8522D73815800000FB8 /* PassWarriorTests.xctest */,
+				69ACC85C2D73815800000FB8 /* PassWarriorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69ACC83B2D73815300000FB8 /* PassMate */ = {
+		69ACC83B2D73815300000FB8 /* PassWarrior */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69ACC8662D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassMate" */;
+			buildConfigurationList = 69ACC8662D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassWarrior" */;
 			buildPhases = (
 				69ACC8382D73815300000FB8 /* Sources */,
 				69ACC8392D73815300000FB8 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				69ACC83E2D73815300000FB8 /* PassMate */,
+				69ACC83E2D73815300000FB8 /* PassWarrior */,
 			);
-			name = PassMate;
+			name = PassWarrior;
 			packageProductDependencies = (
 			);
 			productName = PassMate;
-			productReference = 69ACC83C2D73815300000FB8 /* PassMate.app */;
+			productReference = 69ACC83C2D73815300000FB8 /* PassWarrior.app */;
 			productType = "com.apple.product-type.application";
 		};
-		69ACC8512D73815800000FB8 /* PassMateTests */ = {
+		69ACC8512D73815800000FB8 /* PassWarriorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69ACC8692D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassMateTests" */;
+			buildConfigurationList = 69ACC8692D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassWarriorTests" */;
 			buildPhases = (
 				69ACC84E2D73815800000FB8 /* Sources */,
 				69ACC84F2D73815800000FB8 /* Frameworks */,
@@ -131,18 +131,18 @@
 				69ACC8542D73815800000FB8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				69ACC8552D73815800000FB8 /* PassMateTests */,
+				69ACC8552D73815800000FB8 /* PassWarriorTests */,
 			);
-			name = PassMateTests;
+			name = PassWarriorTests;
 			packageProductDependencies = (
 			);
 			productName = PassMateTests;
-			productReference = 69ACC8522D73815800000FB8 /* PassMateTests.xctest */;
+			productReference = 69ACC8522D73815800000FB8 /* PassWarriorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		69ACC85B2D73815800000FB8 /* PassMateUITests */ = {
+		69ACC85B2D73815800000FB8 /* PassWarriorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69ACC86C2D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassMateUITests" */;
+			buildConfigurationList = 69ACC86C2D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassWarriorUITests" */;
 			buildPhases = (
 				69ACC8582D73815800000FB8 /* Sources */,
 				69ACC8592D73815800000FB8 /* Frameworks */,
@@ -154,13 +154,13 @@
 				69ACC85E2D73815800000FB8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				69ACC85F2D73815800000FB8 /* PassMateUITests */,
+				69ACC85F2D73815800000FB8 /* PassWarriorUITests */,
 			);
-			name = PassMateUITests;
+			name = PassWarriorUITests;
 			packageProductDependencies = (
 			);
 			productName = PassMateUITests;
-			productReference = 69ACC85C2D73815800000FB8 /* PassMateUITests.xctest */;
+			productReference = 69ACC85C2D73815800000FB8 /* PassWarriorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69ACC8372D73815300000FB8 /* Build configuration list for PBXProject "PassMate" */;
+			buildConfigurationList = 69ACC8372D73815300000FB8 /* Build configuration list for PBXProject "PassWarrior" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69ACC83B2D73815300000FB8 /* PassMate */,
-				69ACC8512D73815800000FB8 /* PassMateTests */,
-				69ACC85B2D73815800000FB8 /* PassMateUITests */,
+				69ACC83B2D73815300000FB8 /* PassWarrior */,
+				69ACC8512D73815800000FB8 /* PassWarriorTests */,
+				69ACC85B2D73815800000FB8 /* PassWarriorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		69ACC8542D73815800000FB8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69ACC83B2D73815300000FB8 /* PassMate */;
+			target = 69ACC83B2D73815300000FB8 /* PassWarrior */;
 			targetProxy = 69ACC8532D73815800000FB8 /* PBXContainerItemProxy */;
 		};
 		69ACC85E2D73815800000FB8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69ACC83B2D73815300000FB8 /* PassMate */;
+			target = 69ACC83B2D73815300000FB8 /* PassWarrior */;
 			targetProxy = 69ACC85D2D73815800000FB8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -388,10 +388,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PassMate/PassMate.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PassWarrior/PassWarrior.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PassMate/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PassWarrior/Preview Content\"";
 				DEVELOPMENT_TEAM = C22Z2TZ292;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -411,7 +411,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jonesrmj.PassMate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonesrmj.PassWarrior;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -427,10 +427,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PassMate/PassMate.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PassWarrior/PassWarrior.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PassMate/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PassWarrior/Preview Content\"";
 				DEVELOPMENT_TEAM = C22Z2TZ292;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -450,7 +450,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jonesrmj.PassMate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonesrmj.PassWarrior;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -479,7 +479,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassMate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PassMate";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassWarrior.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PassWarrior";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
@@ -502,7 +502,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassMate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PassMate";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassWarrior.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PassWarrior";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
@@ -554,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69ACC8372D73815300000FB8 /* Build configuration list for PBXProject "PassMate" */ = {
+		69ACC8372D73815300000FB8 /* Build configuration list for PBXProject "PassWarrior" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ACC8642D73815800000FB8 /* Debug */,
@@ -563,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69ACC8662D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassMate" */ = {
+		69ACC8662D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassWarrior" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ACC8672D73815800000FB8 /* Debug */,
@@ -572,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69ACC8692D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassMateTests" */ = {
+		69ACC8692D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassWarriorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ACC86A2D73815800000FB8 /* Debug */,
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69ACC86C2D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassMateUITests" */ = {
+		69ACC86C2D73815800000FB8 /* Build configuration list for PBXNativeTarget "PassWarriorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ACC86D2D73815800000FB8 /* Debug */,
