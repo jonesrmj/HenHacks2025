@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Hello, world. You're at the password page.")
+
+def display(request):
+    return render(request, "Passwarrior.html")
