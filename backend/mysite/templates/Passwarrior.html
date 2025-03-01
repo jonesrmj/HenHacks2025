@@ -4,21 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="PassMate_Logo.png" alt="Description of Image">
     <title>Passwarrior</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Passwarrior.css' %}">
 </head>
 <body>
     <h1>-  -  -  -  Passwarrior  -  -  -  -</h1>
     <div style="margin-bottom: 30px;">
-        <h2> <span style="margin-right: 40px;">Is your password strong enough?</span>
+        <h2> <span style="margin-right: 60px;">Is your password strong enough?</span>
             Has your password been compromised?
         </h2>
     </div>
 
      <div style="margin-bottom: 50px;">
-        <h2>Find out by entering your password below:</h2>
+        <h3>Enter a password to check it's strength, verify if it has appeared in any data leaks, and receive additonal feedback.</h3>
     </div>
-    <form action="/search" method="GET">
+    <form>
         <input type="text" name="query" placeholder="Enter Password:" required>
         <div style="margin-bottom: 15px;"></div>
         <button type="submit">Enter </button>

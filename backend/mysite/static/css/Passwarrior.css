@@ -1,5 +1,5 @@
 body {
-    background-color: #d3d3d3; /* Black background for the whole page */  
+    background-color: white; /* Black background for the whole page */  
 }
 
 
@@ -7,7 +7,7 @@ body {
 h1 {
     color: black;
     text-align: center; /* Centers the text */
-    letter-spacing: 1px; /* Spacing between letters */
+    letter-spacing: .8px; /* Spacing between letters */
     margin-top: 20px; /* Space above */
     font-weight: bold; /* Bold for emphasis */
     font-size: 2.5rem; /* Size for h2 */
@@ -17,10 +17,19 @@ h1 {
 h2 {
     color: black;
     text-align: center; /* Centers the text */
-    letter-spacing: 1px; /* Spacing between letters */
+    letter-spacing: .8px; /* Spacing between letters */
     margin-top: 45px; /* Space above */
     font-size: 1.5rem; /* Size for h2 */
+    font-weight: bold; /* Bold for emphasis */
     
+
+}
+h3 {
+    color: black;
+    text-align: center; /* Centers the text */
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 45px; /* Space above */
+    font-size: 1.3rem; /* Size for h2 */
 
 }
 form {
@@ -38,6 +47,7 @@ input[type="text"] {
     border-radius: 5px;
     box-sizing: border-box; /* Ensures padding doesn't add to width */
     transition: border 0.3s ease-in-out; /* Smooth transition for border */
+    margin-top: -20px;
 }
 
 input[type="text"]:focus {
@@ -56,3 +66,11 @@ button {
     margin-left: 10px;
     transition: background-color 0.3s;
 } 
+
+img {
+    align-items: center;
+    display: block;  /* Makes the image a block-level element */
+    margin-left: auto;  /* Horizontally centers the image */
+    margin-right: auto;  /* Horizontally centers the image */
+    width: 150px; /* Optional: Adjust the image size */
+}
