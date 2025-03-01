@@ -7,3 +7,4 @@ def index(request):
 
 def display(request):
     return render(request, "Passwarrior.html")
+
