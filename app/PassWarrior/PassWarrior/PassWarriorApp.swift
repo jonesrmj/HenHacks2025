@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct PassMateApp: App {
+struct PassWarriorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
