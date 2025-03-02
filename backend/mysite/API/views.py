@@ -13,10 +13,12 @@ api_key = os.getenv("API_KEY")
 @csrf_exempt
 def CallHandler(request):
     if request.method == "POST":
-        password = request.POST.get["password"]
+        print(request.POST)
+        #password = request.POST.get["password"]
         #make api calls here
 
-        return HttpResponse(json.dumps({"password": password}))
+        #return HttpResponse(json.dumps({"password": password}))
+        return HttpResponse("it works")
     else:
         return HttpResponse("Not a POST Request")
 
