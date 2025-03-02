@@ -9,6 +9,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials  # Import Credentials for OAuth
 from django.views.decorators.csrf import csrf_exempt
+from zxcvbn import zxcvbn
 
 
 load_dotenv()    
@@ -145,9 +146,13 @@ def getFilePath():
 def call_handler(request):
     if request.method == "POST":
         password = json.loads(request.body)["password"]
+
+        analysis = zxcvbn(password)
+        print(analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"])
+
         #make api calls here
 
-        return HttpResponse(json.dumps({"strengh":"It would take 21 hours to crack this password (Dummy Data)", "breaches": "This password has been in 50 breaches (Dummy Data)", "AI": "To Improve this pass you could... (Dummy Data)"}))
+        return HttpResponse(json.dumps({"strengh":f"It would take hackers {analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"]} to crack your password." , "breaches": "This password has been in 50 breaches (Dummy Data)", "AI": "To Improve this pass you could... (Dummy Data)"}))
     else:
         return HttpResponse("Not a POST Request")
 
