@@ -18,7 +18,7 @@ def CallHandler(request):
         #make api calls here
 
         #return HttpResponse(json.dumps({"password": password}))
-        return HttpResponse("it works")
+        return HttpResponse(json.dumps{"it works"})
     else:
         return HttpResponse("Not a POST Request")
 
