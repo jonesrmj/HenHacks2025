@@ -25,7 +25,7 @@ fetch(apiUrl, requestOptions)
   })
   .then(data => {
     dict = JSON.parse(JSON.stringify(data, null, 2));
-    document.getElementById("outputElement").innerHTML = dict;
+    // document.getElementById("outputElement").innerHTML = dict;
     document.getElementById("DataDisplay").innerHTML =  dict["strengh"];
     document.getElementById("Datainfo").innerHTML = dict["breaches"];
     document.getElementById("Suggestioninfo").innerHTML = dict["AI"];
