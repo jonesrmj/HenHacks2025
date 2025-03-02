@@ -30,6 +30,7 @@ h3 {
     letter-spacing: .8px; /* Spacing between letters */
     margin-top: 45px; /* Space above */
     font-size: 1.3rem; /* Size for h2 */
+    font-weight: bold; /* Bold for emphasis */
 
 }
 form {
@@ -78,7 +79,7 @@ img {
 #DataDisplay {
     color: black;
     letter-spacing: .8px; /* Spacing between letters */
-    margin-top: 40px; /* Space above */
+    margin-top: 30px; /* Space above */
     font-size: 1.3rem; /* Size for h2 */
     text-align: center;
 }
@@ -102,7 +103,7 @@ img {
 #Datainfo {
     color: black;
     letter-spacing: .8px; /* Spacing between letters */
-    margin-top: 40px; /* Space above */
+    margin-top: 30px; /* Space above */
     font-size: 1.3rem; /* Size for h2 */
     text-align: center;
 
@@ -118,7 +119,7 @@ img {
 #Suggestioninfo {
     color: black;
     letter-spacing: .8px; /* Spacing between letters */
-    margin-top: 40px; /* Space above */
+    margin-top: 30px; /* Space above */
     font-size: 1.3rem; /* Size for h2 */
     text-align: center;
 
@@ -134,7 +135,7 @@ img {
 #InfoOutput {
     color: black;
     letter-spacing: .8px; /* Spacing between letters */
-    margin-top: 40px; /* Space above */
+    margin-top: 30px; /* Space above */
     font-size: 1.3rem; /* Size for h2 */
     text-align: center;
 
