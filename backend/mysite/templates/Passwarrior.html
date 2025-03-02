@@ -7,6 +7,8 @@
     <img src="{%static 'images/PassMate_Logo.png' %}" alt="Description of Image">
     <title>Passwarrior</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Passwarrior.css' %}"> 
+    <script src="{% static 'javascript/Javascriptpass.js' %}"></script>
+
 </head>
 <body>
     <h1>-  -  -  -  Passwarrior  -  -  -  -</h1>
@@ -34,6 +36,8 @@
     <div id ="Suggestioninfo"></div>
 
     <script>
+        
+
         function getPassword() {
         var password = document.getElementById("pass").value;
         document.getElementById("Summary").innerHTML = "Summary:";
@@ -43,15 +47,8 @@
         document.getElementById("Suggestions").innerHTML = "Suggestions:";
         document.getElementById("Suggestioninfo").innerHTML = "place holder"
 
-        window.scrollBy(0, 1); // Move down 1 pixel
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                setTimeout(() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll back to top smoothly
-                    requestAnimationFrame(smoothScroll); // Restart scrolling
-                }, 1000);
-            } else {
-                requestAnimationFrame(smoothScroll); // Continue scrolling
-            }
+        console.log(sendData());
+
         }
         
         
