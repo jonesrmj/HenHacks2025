@@ -148,11 +148,12 @@ img {
     padding-left: 50px; /* Adjust left spacing */
     height: 100vh; /* Full height of viewport */
 
-    outline: 2px solid #4016d4; /* Red outline */
-    border: 2px solid #4016d4; /* Black border */
+    outline: 2px solid white; /* Red outline */
+    border: 2px solid white; /* Black border */
     padding: 20px; /* Add some spacing inside the container */
     width: 400px; /* Adjust container width */
-    height: 400px;
+    min-height: 400px;
+    height: auto;
     border-radius: 50px;
 }
 
@@ -162,7 +163,7 @@ img {
     align-items: flex-start; /* Align containers at the top */
     gap: 20px; /* Space between the containers */
     padding-left: 200px; /* Adjust left spacing */
-    margin-left: 78px;
+    margin-left: 4.8%;
     margin-top: 20px;
 }
 

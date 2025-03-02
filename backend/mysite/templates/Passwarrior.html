@@ -29,24 +29,24 @@
     </form>
 
     <div class="flex-parent">
-    <div class="flex-container">
+    <div class="flex-container" id="flexBox">
     <div id ="Summary"></div>
     <div id ="DataDisplay"></div>
     </div>
 
-    <div class="flex-container">
+    <div class="flex-container" id="flexBox2">
     <div id ="Dataleaks"></div>
     <div id ="Datainfo"></div>
     </div>
     </div>
     
     <div class="flex-parent">
-    <div class="flex-container">
+    <div class="flex-container" id="flexBox3">
     <div id ="Suggestions"></div>
     <div id ="Suggestioninfo"></div>
     </div>
 
-    <div class="flex-container">
+    <div class="flex-container" id="flexBox4">
         <div id ="Generalinfo"></div> 
         <div id ="InfoOutput"></div> 
 
@@ -57,6 +57,14 @@
     <div id="outputElement"></div>
 
     <script>
+               document.getElementById("flexBox").style.borderColor = "#ffffff";
+       document.getElementById("flexBox").style.outlineColor = "#ffffff";
+       document.getElementById("flexBox2").style.borderColor = "#ffffff";
+       document.getElementById("flexBox2").style.outlineColor = "#ffffff";
+       document.getElementById("flexBox3").style.borderColor = "#ffffff";
+       document.getElementById("flexBox3").style.outlineColor = "#ffffff";
+       document.getElementById("flexBox4").style.borderColor = "#ffffff";
+       document.getElementById("flexBox4").style.outlineColor = "#ffffff";
         
 
         function getPassword() {
@@ -65,9 +73,19 @@
         document.getElementById("Suggestions").innerHTML = "Suggestions:";
         document.getElementById("Dataleaks").innerHTML = "Data Leaks:";
         document.getElementById("Generalinfo").innerHTML = "General Info:";
-        document.getElementById("InfoOutput").innerHTML = "Placeholder";
+        document.getElementById("InfoOutput").innerHTML = "A password should be atleast 12 characters long, 14 is recommended. Using a mix of letters, numbers, and symbols, has been proved to keep a password much safer than average. Try to avoid using sequential letters or numbers.";
 
         console.log(sendData(password));
+       document.getElementById("flexBox").style.borderColor = "#4016d4";
+       document.getElementById("flexBox").style.outlineColor = "#4016d4";
+       document.getElementById("flexBox2").style.borderColor = "#4016d4";
+       document.getElementById("flexBox2").style.outlineColor = "#4016d4";
+       document.getElementById("flexBox3").style.borderColor = "#4016d4";
+       document.getElementById("flexBox3").style.outlineColor = "#4016d4";
+       document.getElementById("flexBox4").style.borderColor = "#4016d4";
+       document.getElementById("flexBox4").style.outlineColor = "#4016d4";
+
+
 
         function scrollDown() {
             let position = 0;
