@@ -18,81 +18,86 @@ struct ContentView: View {
     GeometryReader { geometry in
       let isLandscape = geometry.size.width > geometry.size.height
       let isWideScreen = horizontalSizeClass == .regular // Detects iPad/Mac
-      
-      ScrollView {
-        if isLandscape || isWideScreen {
-          // iPad/Mac
-          
-        } else {
-          // iPhone
-          VStack {
-            ZStack {
-              RoundedRectangle(cornerRadius: 20)
-                .fill(Color("systemBackground"))
-                .overlay(
-                  RoundedRectangle(cornerRadius: 20)
-                    .stroke(colorScheme == .dark ? Color.white.opacity(0.2) : Color.gray.opacity(0.3), lineWidth: 1)
-                )
-                .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
-              
-              VStack {
-                Image("PassWarrior Logo")
-                  .resizable()
-                  .frame(width: 124, height: 124)
-                  .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
-                  .padding(.top, 20.0)
-                
-                Text("PassWarrior")
-                  .font(.title)
-                  .bold()
-                  .padding(.top, 10.0)
-                
-                Text("Your trusted companion for Password Security!")
-                  .font(.title3)
-                  .padding(.top, 0.25)
-                  .padding(.bottom, 20.0)
-              }
-              .multilineTextAlignment(.center)
-            }
-            .padding(.all, 20.0)
+      NavigationStack {
+        ScrollView {
+          if isLandscape || isWideScreen {
+            // iPad/Mac
             
-            ZStack {
-              RoundedRectangle(cornerRadius: 20)
-                .fill(Color("systemBackground"))
-                .overlay(
-                  RoundedRectangle(cornerRadius: 20)
-                    .stroke(colorScheme == .dark ? Color.white.opacity(0.2) : Color.gray.opacity(0.3), lineWidth: 1)
-                )
-                .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
-              
-              VStack {
-                Text("Password Checkup")
-                  .font(.title2)
-                  .bold()
-                  .padding(.top, 20.0)
+          } else {
+            // iPhone
+            VStack {
+              ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                  .fill(Color("systemBackground"))
+                  .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                      .stroke(colorScheme == .dark ? Color.white.opacity(0.2) : Color.gray.opacity(0.3), lineWidth: 1)
+                  )
+                  .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
                 
-                Text("Enter a password to check its strength, verify if it has appeared in any data leaks, and receive additional feedback.")
-                  .font(.body)
-                  .padding(.all, 10.0)
-                
-                TextField("Enter a Password", text: self.$password)
-                  .padding(.leading, 10.0)
-                  .padding(.trailing, 10.0)
-                  .padding(.bottom, 10.0)
-                
-                Button {
-                  PasswordAnalyzer.analyzePassword(password: self.password) { response in
-                    print(response)
-                  }
-                } label: {
-                  Text("Analyze")
+                VStack {
+                  Image("PassWarrior Logo")
+                    .resizable()
+                    .frame(width: 124, height: 124)
+                    .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
+                    .padding(.top, 20.0)
+                  
+                  Text("PassWarrior")
+                    .font(.title)
+                    .bold()
+                    .padding(.top, 10.0)
+                  
+                  Text("Your trusted companion for Password Security!")
+                    .font(.title3)
+                    .padding(.top, 0.25)
+                    .padding(.bottom, 20.0)
                 }
-                .padding(.bottom, 20.0)
+                .multilineTextAlignment(.center)
               }
-              .multilineTextAlignment(.center)
+              .padding(.all, 20.0)
+              
+              ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                  .fill(Color("systemBackground"))
+                  .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                      .stroke(colorScheme == .dark ? Color.white.opacity(0.2) : Color.gray.opacity(0.3), lineWidth: 1)
+                  )
+                  .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.5 : 0.1), radius: 10, x: 0, y: 5)
+                
+                VStack {
+                  Text("Password Checkup")
+                    .font(.title2)
+                    .bold()
+                    .padding(.top, 20.0)
+                  
+                  Text("Enter a password to check its strength, verify if it has appeared in any data leaks, and receive additional feedback.")
+                    .font(.body)
+                    .padding(.all, 10.0)
+                  
+                  TextField("Enter a Password", text: self.$password)
+                    .padding(.leading, 10.0)
+                    .padding(.trailing, 10.0)
+                    .padding(.bottom, 10.0)
+                  
+                  NavigationLink(destination: PasswordAnalyticsView(password: password)) {
+                    Text("Analyze")
+                      .frame(maxWidth: .infinity)
+                      .padding()
+                      .background(Color.blue)
+                      .foregroundColor(.white)
+                      .cornerRadius(10)
+                  }
+                  .padding(.top, 10.0)
+                  .padding(.leading, 20.0)
+                  .padding(.trailing, 20.0)
+                  .padding(.bottom, 20.0)
+                }
+                .multilineTextAlignment(.center)
+              }
+              .padding(.leading, 20.0)
+              .padding(.trailing, 20.0)
             }
-            .padding(.leading, 20.0)
-            .padding(.trailing, 20.0)
           }
         }
       }
