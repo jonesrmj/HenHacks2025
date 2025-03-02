@@ -3,7 +3,6 @@ import json
 import time
 import requests
 import hashlib
-from django.shortcuts import render
 from django.http import HttpResponse
 from dotenv import load_dotenv
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -31,6 +30,7 @@ def get_oauth_file_path():
 # Inside get_oauth_token function
 def get_oauth_token():
     credentials = None
+    credentials_data = None
     CLIENT_SECRETS_FILE = get_oauth_file_path()
 
     if CLIENT_SECRETS_FILE is None:
@@ -144,12 +144,9 @@ def getFilePath():
 @csrf_exempt
 def call_handler(request):
     if request.method == "POST":
-        print("HI IM STUPID AND AM IN CALL HANDLER")
-        print(request)
-        password = request.POST.get["password"]
+        password = json.loads(request.body)["password"]
         #make api calls here
 
-        #return HttpResponse(json.dumps({"password": password}))
         return HttpResponse(json.dumps({"strengh":"It would take 21 hours to crack this password (Dummy Data)", "breaches": "This password has been in 50 breaches (Dummy Data)", "AI": "To Improve this pass you could... (Dummy Data)"}))
     else:
         return HttpResponse("Not a POST Request")
