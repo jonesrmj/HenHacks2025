@@ -1,6 +1,6 @@
 async function sendData(password) {
 
-const apiUrl = 'http://127.0.0.1:8000/dummy/';
+const apiUrl = 'http://127.0.0.1:8000/API/dummy/';
 
 const passwordInput = {
     pass: password,

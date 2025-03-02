@@ -144,6 +144,8 @@ def getFilePath():
 @csrf_exempt
 def call_handler(request):
     if request.method == "POST":
+        print("HI IM STUPID AND AM IN CALL HANDLER")
+        print(request)
         password = request.POST.get["password"]
         #make api calls here
 
@@ -157,4 +159,4 @@ def dummy_data(request):
     if request.method == "POST":
         return HttpResponse(json.dumps({"strengh":"It would take 21 hours to crack this password (Dummy Data)", "breaches": "This password has been in 50 breaches (Dummy Data)", "AI": "To Improve this pass you could... (Dummy Data)"}))
     else:
-        return HttpResponse("Not a POST Request")
+        return HttpResponse("Not a POST Request (dummy)")
