@@ -109,7 +109,7 @@ def improvePasswordSecurity(password):
     else:
         return f"Error: Unable to reach Gemini API. Status code: {response.status_code}, Response: {response.text}"
     
-def checkPassword(password):
+def checkBreachs(password):
     # Hash the password using SHA-1
     sha1_hash = hashlib.sha1(password.encode()).hexdigest().upper()
     prefix, suffix = sha1_hash[:5], sha1_hash[5:]
@@ -152,7 +152,7 @@ def call_handler(request):
 
         #make api calls here
 
-        return HttpResponse(json.dumps({"strengh":f"It would take hackers {analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"]} to crack your password." , "breaches": "This password has been in 50 breaches (Dummy Data)", "AI": "To Improve this pass you could... (Dummy Data)"}))
+        return HttpResponse(json.dumps({"strengh":f"It would take hackers {analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"]} to crack your password." , "breaches": checkBreachs(password), "AI": "To Improve this pass you could... (Dummy Data)"}))
     else:
         return HttpResponse("Not a POST Request")
 
