@@ -8,14 +8,14 @@ from django.http import HttpResponse
 from dotenv import load_dotenv
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials  # Import Credentials for OAuth
+from google.oauth2.credentials import Credentials
 from django.views.decorators.csrf import csrf_exempt
 from zxcvbn import zxcvbn
 
-
 load_dotenv()    
 api_key = os.getenv("API_KEY")
-SCOPES = ['https://www.googleapis.com/auth/cloud-platform', 'https://www.googleapis.com/auth/generative-language.tuning']  # Adjust scope if necessary
+# Corrected SCOPES with proper URLs
+SCOPES = ['https://www.googleapis.com/auth/cloud-platform', 'https://www.googleapis.com/auth/generative-language.tuning']
 
 # Define the client secrets file relative to the current directory
 def get_oauth_file_path():
@@ -29,7 +29,7 @@ def get_oauth_file_path():
         print(f"File not found: {CLIENT_SECRETS_FILE}")
         return None
 
-# Inside get_oauth_token function
+# Updated get_oauth_token function with exception handling
 def get_oauth_token():
     credentials = None
     credentials_data = None
@@ -46,23 +46,22 @@ def get_oauth_token():
             except json.JSONDecodeError:
                 return "Error: Invalid token format."
             
-    # Ensure credentials_data is a dictionary
-    print(credentials_data)
-    if isinstance(credentials_data, dict):
-        credentials = Credentials.from_authorized_user_info(info=credentials_data)
-    else:
-        return "Error: Token data is not in the expected format."
-    
-    # If credentials are not available or expired, run OAuth flow
-    if not credentials or 'expiry' not in credentials or float(credentials.get('expiry', 0)) <= time.time():
+        # Attempt to create credentials from the loaded data
+        try:
+            credentials = Credentials.from_authorized_user_info(info=credentials_data)
+        except ValueError as e:
+            print(f"Error loading credentials: {e}")
+            credentials = None  # Set to None to trigger re-authentication
+
+    # If no valid credentials or they are expired, run OAuth flow
+    if not credentials or (credentials.expiry and credentials.expiry.timestamp() <= time.time()):
         flow = InstalledAppFlow.from_client_secrets_file(
             CLIENT_SECRETS_FILE, SCOPES)
-        # Specify a fixed port (e.g., 8080)
         credentials = flow.run_local_server(port=8080)
 
-    # Save the credentials for the next run (corrected to write JSON string directly)
-    with open('token.json', 'w') as token:
-        token.write(credentials.to_json())  # Changed from json.dump to write the JSON string directly
+        # Save the new credentials for the next run
+        with open('token.json', 'w') as token:
+            token.write(credentials.to_json())
 
     return credentials.token
 
@@ -79,7 +78,7 @@ def geminiAdvice(password):
         "Content-Type": "application/json"
     }
 
-    # Prepare the payload with the password in a prompt (corrected typo: "test" to "text")
+    # Prepare the payload with the password in a prompt
     prompt = f"Suggest ways to improve the security of the password: {password}"
     payload = {
         "contents": [
@@ -87,14 +86,14 @@ def geminiAdvice(password):
                 "role": "user",
                 "parts": [
                     {
-                        "text": prompt  # Fixed typo from "test" to "text"
+                        "text": prompt
                     }
                 ]
             }
         ]
     }
 
-    # URL for Gemini API (updated to use a valid model: gemini-1.5-flash)
+    # URL for Gemini API (using gemini-1.5-flash model)
     url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
 
     # Make the request to the Gemini API
@@ -166,19 +165,28 @@ def call_handler(request):
         password = json.loads(request.body)["password"]
 
         analysis = zxcvbn(password)
-        #make api calls here
-
-        return HttpResponse(json.dumps({"strengh":f"It would take hackers {analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"]} to crack your password." , 
-                                        "breaches": checkBreachs(password), 
-                                        "AI": "Advice from Google Gemini\n geminiAdvice(password) (not working rn)",
-                                        "best_practices": {"12Char": True, "UpChar": has_uppercase(password), "SpecChar": has_special_characters(password), "Num": has_numbers(password)}}))
-
+        # Make API calls here
+        return HttpResponse(json.dumps({
+            "strengh": f"It would take hackers {analysis['crack_times_display']['offline_slow_hashing_1e4_per_second']} to crack your password.",
+            "breaches": checkBreachs(password),
+            "AI": f"Advice from Google Gemini\n {geminiAdvice(password)} (not working rn)",
+            "best_practices": {
+                "12Char": True,
+                "UpChar": has_uppercase(password),
+                "SpecChar": has_special_characters(password),
+                "Num": has_numbers(password)
+            }
+        }))
     else:
         return HttpResponse("Not a POST Request")
 
 @csrf_exempt
 def dummy_data(request):
     if request.method == "POST":
-        return HttpResponse(json.dumps({"strengh":"It would take 21 hours to crack this password (Dummy Data)", "breaches": "This password has been in 50 breaches (Dummy Data)", "AI": "To Improve this pass you could... (Dummy Data)"}))
+        return HttpResponse(json.dumps({
+            "strengh": "It would take 21 hours to crack this password (Dummy Data)",
+            "breaches": "This password has been in 50 breaches (Dummy Data)",
+            "AI": "To Improve this pass you could... (Dummy Data)"
+        }))
     else:
         return HttpResponse("Not a POST Request (dummy)")
