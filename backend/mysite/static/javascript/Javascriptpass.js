@@ -1,9 +1,9 @@
-async function sendData() {
+async function sendData(password) {
 
-const apiUrl = 'http://127.0.0.1:8000/API';
+const apiUrl = 'http://127.0.0.1:8000/API/';
 
 const passwordInput = {
-    pass: passward,
+    pass: password,
 };
 
 
@@ -24,7 +24,11 @@ fetch(apiUrl, requestOptions)
     return response.json();
   })
   .then(data => {
-    outputElement.textContent = JSON.stringify(passwordInput, null, 2);
+    dict = JSON.parse(JSON.stringify(data, null, 2));
+    document.getElementById("outputElement").innerHTML = dict;
+    document.getElementById("DataDisplay").innerHTML =  dict["strengh"];
+    document.getElementById("Datainfo").innerHTML = dict["breaches"];
+    document.getElementById("Suggestioninfo").innerHTML = dict["AI"];
   })
   .catch(error => {
     console.error

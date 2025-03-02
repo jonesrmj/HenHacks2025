@@ -34,6 +34,7 @@
     <br><br><br><br><br><br>
     <div id ="Suggestions"></div>
     <div id ="Suggestioninfo"></div>
+    <div id="outputElement"></div>
 
     <script>
         
@@ -41,13 +42,11 @@
         function getPassword() {
         var password = document.getElementById("pass").value;
         document.getElementById("Summary").innerHTML = "Summary:";
-        document.getElementById("DataDisplay").innerHTML = "Password Strenght:" + password;
-        document.getElementById("Dataleaks").innerHTML = "Data Leaks:";
-        document.getElementById("Datainfo").innerHTML = "Your password has appeared in" + password; + "data leaks"
         document.getElementById("Suggestions").innerHTML = "Suggestions:";
         document.getElementById("Suggestioninfo").innerHTML = "place holder"
+        document.getElementById("Dataleaks").innerHTML = "Data Leaks";
 
-        console.log(sendData());
+        console.log(sendData(password));
 
         }
         
