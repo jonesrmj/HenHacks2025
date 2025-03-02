@@ -29,28 +29,24 @@
     </form>
 
     <div class="flex-parent">
-    <div class="flex-container" id="flexBox">
+    <div class="flex-container first-container" id="flexBox">
     <div id ="Summary"></div>
     <div id ="DataDisplay"></div>
     </div>
 
-    <div class="flex-container" id="flexBox2">
+    <div class="flex-container first-container" id="flexBox2">
     <div id ="Dataleaks"></div>
     <div id ="Datainfo"></div>
     </div>
     </div>
     
     <div class="flex-parent">
-    <div class="flex-container" id="flexBox3">
+    <div class="flex-container second-container" id="flexBox3">
     <div id ="Suggestions"></div>
     <div id ="Suggestioninfo"></div>
     </div>
 
-    <div class="flex-container" id="flexBox4">
-        <div id ="Generalinfo"></div> 
-        <div id ="InfoOutput"></div> 
 
-    </div>
 </div>
     
 
@@ -72,8 +68,8 @@
         document.getElementById("Summary").innerHTML = "Hours to Crack:";
         document.getElementById("Suggestions").innerHTML = "Suggestions:";
         document.getElementById("Dataleaks").innerHTML = "Data Leaks:";
-        document.getElementById("Generalinfo").innerHTML = "General Info:";
-        document.getElementById("InfoOutput").innerHTML = "A password should be atleast 12 characters long, 14 is recommended. Using a mix of letters, numbers, and symbols, has been proved to keep a password much safer than average. Try to avoid using sequential letters or numbers.";
+       // document.getElementById("Generalinfo").innerHTML = "General Info:";
+       // document.getElementById("InfoOutput").innerHTML = "A password should be atleast 12 characters long, 14 is recommended. Using a mix of letters, numbers, and symbols, has been proved to keep a password much safer than average. Try to avoid using sequential letters or numbers.";
 
         console.log(sendData(password));
        document.getElementById("flexBox").style.borderColor = "#4016d4";

@@ -151,10 +151,6 @@ img {
     outline: 2px solid white; /* Red outline */
     border: 2px solid white; /* Black border */
     padding: 20px; /* Add some spacing inside the container */
-    width: 400px; /* Adjust container width */
-    min-height: 400px;
-    height: auto;
-    border-radius: 50px;
 }
 
 .flex-parent {
@@ -167,3 +163,17 @@ img {
     margin-top: 20px;
 }
 
+.first-container {
+    width: 400px; /* Adjust container width */
+    min-height: 400px;
+    height: auto;
+    border-radius: 50px;
+}
+
+
+.second-container {
+    width: 865px; /* Adjust container width */
+    min-height: 400px;
+    height: auto;
+    border-radius: 50px;
+}
