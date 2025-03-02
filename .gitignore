@@ -175,3 +175,4 @@ cython_debug/
 
 # Secret Files
 client_secret*.json
+*.pyc
