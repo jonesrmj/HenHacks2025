@@ -31,8 +31,6 @@ fetch(apiUrl, requestOptions)
     document.getElementById("DataDisplay").innerHTML = dict["strengh"];
     document.getElementById("Datainfo").innerHTML = dict["breaches"];
     document.getElementById("Suggestioninfo").innerHTML = dict["AI"];
-
-
   })
   .catch(error => {
     console.error

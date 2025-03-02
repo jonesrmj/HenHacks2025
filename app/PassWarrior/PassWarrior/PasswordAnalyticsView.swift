@@ -7,9 +7,29 @@
 
 import SwiftUI
 
+class PasswordAnalyticsViewModel: ObservableObject {
+  @Published var strength: String = "Analyzing..."
+  @Published var breaches: String = "Checking..."
+  @Published var aiAdvice: NSAttributedString = NSAttributedString(string: "Analyzing...")
+  
+  func analyze(password: String) {
+    PasswordAnalyzer.analyzePassword(password: password) { result in
+      DispatchQueue.main.async {
+        self.strength = result.strength
+        self.breaches = result.breaches
+        self.aiAdvice = result.aiAdvice
+      }
+    }
+  }
+}
+
 struct PasswordAnalyticsView: View {
   @Environment(\.horizontalSizeClass) var horizontalSizeClass
   @Environment(\.colorScheme) var colorScheme
+  
+  @StateObject private var viewModel = PasswordAnalyticsViewModel()
+  
+  let password: String
   
   var body: some View {
     GeometryReader { geometry in
@@ -39,7 +59,7 @@ struct PasswordAnalyticsView: View {
                   .padding(.top, 20.0)
                   .padding(.bottom, 10.0)
                 
-                Text("abc123")
+                Text(password)
                   .font(.title2)
                   .bold()
                   .padding(.leading, 10.0)
@@ -68,7 +88,7 @@ struct PasswordAnalyticsView: View {
                   .font(.body)
                   .padding(.all, 5.0)
                 
-                Text("Good")
+                Text(viewModel.strength)
                   .font(.title2)
                   .bold()
                   .padding(.leading, 10.0)
@@ -95,7 +115,7 @@ struct PasswordAnalyticsView: View {
                   .bold()
                   .padding(.top, 20.0)
                 
-                Text("Your password has appeared in 0 data leaks.")
+                Text(viewModel.breaches)
                   .font(.body)
                   .padding(.top, 0.25)
                   .padding(.leading, 10.0)
@@ -122,8 +142,7 @@ struct PasswordAnalyticsView: View {
                   .bold()
                   .padding(.top, 20.0)
                 
-                Text("Suggestions go here...")
-                  .font(.body)
+                Text(viewModel.aiAdvice.string)
                   .padding(.top, 0.25)
                   .padding(.leading, 10.0)
                   .padding(.trailing, 10.0)
@@ -133,12 +152,16 @@ struct PasswordAnalyticsView: View {
             .padding(.leading, 20.0)
             .padding(.trailing, 20.0)
           }
+          .multilineTextAlignment(.center)
         }
+      }
+      .onAppear {
+        viewModel.analyze(password: password)
       }
     }
   }
 }
 
 #Preview {
-  PasswordAnalyticsView()
+  PasswordAnalyticsView(password: "example123")
 }

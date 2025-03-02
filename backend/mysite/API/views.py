@@ -170,7 +170,7 @@ def call_handler(request):
         return HttpResponse(json.dumps({
             "strengh": f"It would take hackers {analysis['crack_times_display']['offline_slow_hashing_1e4_per_second']} to crack your password.",
             "breaches": checkBreachs(password),
-            "AI": geminiAdvice(password),
+            "AI": f"Advice from Google Gemini\n {geminiAdvice(password)} (not working rn)",
             "best_practices": {
                 "12Char": True,
                 "UpChar": has_uppercase(password),
