@@ -1,6 +1,6 @@
 async function sendData(pass) {
 
-  const apiUrl = 'http://www.passwarrior.co/8000:';
+  const apiUrl = 'http://127.0.0.1:8000/API/';
   
   const passwordInput = {
       password: pass,
