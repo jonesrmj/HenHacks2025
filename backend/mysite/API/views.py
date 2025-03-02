@@ -3,6 +3,7 @@ import json
 import time
 import requests
 import hashlib
+import string
 from django.http import HttpResponse
 from dotenv import load_dotenv
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -46,6 +47,7 @@ def get_oauth_token():
                 return "Error: Invalid token format."
             
     # Ensure credentials_data is a dictionary
+    print(credentials_data)
     if isinstance(credentials_data, dict):
         credentials = Credentials.from_authorized_user_info(info=credentials_data)
     else:
@@ -65,7 +67,7 @@ def get_oauth_token():
     return credentials.token
 
 # Define the improvePasswordSecurity function
-def improvePasswordSecurity(password):
+def geminiAdvice(password):
     oauth_token = get_oauth_token()
 
     if oauth_token.startswith("Error"):
@@ -97,6 +99,7 @@ def improvePasswordSecurity(password):
 
     # Make the request to the Gemini API
     response = requests.post(url, json=payload, headers=headers)
+    print(response.status_code)
 
     # Handle the response from the Gemini API
     if response.status_code == 200:
@@ -141,6 +144,21 @@ def getFilePath():
         print(f"File found: {CLIENT_SECRETS_FILE}")
     else:
         print(f"File not found: {CLIENT_SECRETS_FILE}")
+
+def has_uppercase(input_string):
+    for char in input_string:
+        if char.isupper():
+            return True
+    return False
+
+def has_special_characters(text):
+    for char in text:
+        if not char.isdigit() and char not in string.whitespace:
+            return True
+    return False
+
+def has_numbers(input_string):
+    return any(char.isdigit() for char in input_string)
         
 @csrf_exempt
 def call_handler(request):
@@ -148,11 +166,13 @@ def call_handler(request):
         password = json.loads(request.body)["password"]
 
         analysis = zxcvbn(password)
-        print(analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"])
-
         #make api calls here
 
-        return HttpResponse(json.dumps({"strengh":f"It would take hackers {analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"]} to crack your password." , "breaches": checkBreachs(password), "AI": "To Improve this pass you could... (Dummy Data)"}))
+        return HttpResponse(json.dumps({"strengh":f"It would take hackers {analysis["crack_times_display"]["offline_slow_hashing_1e4_per_second"]} to crack your password." , 
+                                        "breaches": checkBreachs(password), 
+                                        "AI": f"Advice from Google Gemini\n geminiAdvice(password) (not working rn)",
+                                        "best_practices": {"12Char": True, "UpChar": has_uppercase(password), "SpecChar": has_special_characters(password), "Num": has_numbers(password)}}))
+
     else:
         return HttpResponse("Not a POST Request")
 

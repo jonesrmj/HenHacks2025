@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path("", include("PassWarrior.urls")),
     path("password/", include("PassWarrior.urls")),
     path("API/", include("API.urls")),
     path('admin/', admin.site.urls),
