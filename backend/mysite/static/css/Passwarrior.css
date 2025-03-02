@@ -74,3 +74,52 @@ img {
     margin-right: auto;  /* Horizontally centers the image */
     width: 150px; /* Optional: Adjust the image size */
 }
+
+#DataDisplay {
+    color: black;
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 40px; /* Space above */
+    font-size: 1.3rem; /* Size for h2 */
+    text-align: center;
+}
+
+#Summary {
+    color: black;
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 35px; /* Space above */
+    font-size: 1.5rem; /* Size for h2 */
+    text-align: center;
+}
+#Dataleaks {
+    color: black;
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 35px; /* Space above */
+    font-size: 1.5rem; /* Size for h2 */
+    text-align: center;
+
+}
+
+#Datainfo {
+    color: black;
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 40px; /* Space above */
+    font-size: 1.3rem; /* Size for h2 */
+    text-align: center;
+
+}
+#Suggestions {
+    color: black;
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 35px; /* Space above */
+    font-size: 1.5rem; /* Size for h2 */
+    text-align: center;
+
+}
+#Suggestioninfo {
+    color: black;
+    letter-spacing: .8px; /* Spacing between letters */
+    margin-top: 40px; /* Space above */
+    font-size: 1.3rem; /* Size for h2 */
+    text-align: center;
+
+}

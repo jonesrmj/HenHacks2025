@@ -7,6 +7,8 @@
     <img src="{%static 'images/PassMate_Logo.png' %}" alt="Description of Image">
     <title>Passwarrior</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Passwarrior.css' %}"> 
+    <script src="{% static 'javascript/Javascriptpass.js' %}"></script>
+
 </head>
 <body>
     <h1>-  -  -  -  Passwarrior  -  -  -  -</h1>
@@ -20,10 +22,40 @@
         <h3>Enter a password to check it's strength, verify if it has appeared in any data leaks, and receive additonal feedback.</h3>
     </div>
     <form>
-        <input type="text" name="query" placeholder="Enter Password:" required>
+        <input type="text" id="pass" name="pass" placeholder="Enter Password:" required>
         <div style="margin-bottom: 15px;"></div>
-        <button type="submit">Enter </button>
+        <button type="button" onClick="getPassword()">Enter </button>
     </form>
+    <div id ="Summary"></div>
+    <div id ="DataDisplay"></div>
+    <br><br><br><br><br><br>
+    <div id ="Dataleaks"></div>
+    <div id ="Datainfo"></div>
+    <br><br><br><br><br><br>
+    <div id ="Suggestions"></div>
+    <div id ="Suggestioninfo"></div>
+    <div id="outputElement"></div>
+
+    <script>
+        
+
+        function getPassword() {
+        var password = document.getElementById("pass").value;
+        document.getElementById("Summary").innerHTML = "Summary:";
+        document.getElementById("Suggestions").innerHTML = "Suggestions:";
+        document.getElementById("Dataleaks").innerHTML = "Data Leaks";
+
+        console.log(sendData(password));
+
+        }
+        
+        
+
+
+
+
+
+    </script>
 
         
 
