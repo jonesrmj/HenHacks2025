@@ -8,6 +8,7 @@
     <title>Passwarrior</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/Passwarrior.css' %}"> 
     <script src="{% static 'javascript/Javascriptpass.js' %}"></script>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
 </head>
 <body>
@@ -66,10 +67,9 @@
         function getPassword() {
         var password = document.getElementById("pass").value;
         document.getElementById("Summary").innerHTML = "Hours to Crack:";
-        document.getElementById("Suggestions").innerHTML = "Suggestions:";
+        document.getElementById("Suggestions").innerHTML = "Suggestions From Google Gemini:";
         document.getElementById("Dataleaks").innerHTML = "Data Leaks:";
-       // document.getElementById("Generalinfo").innerHTML = "General Info:";
-       // document.getElementById("InfoOutput").innerHTML = "A password should be atleast 12 characters long, 14 is recommended. Using a mix of letters, numbers, and symbols, has been proved to keep a password much safer than average. Try to avoid using sequential letters or numbers.";
+       
 
         console.log(sendData(password));
        document.getElementById("flexBox").style.borderColor = "#4016d4";
@@ -81,22 +81,24 @@
        document.getElementById("flexBox4").style.borderColor = "#4016d4";
        document.getElementById("flexBox4").style.outlineColor = "#4016d4";
 
+    function scrollDown() {
+      let position = 0;
+      let target = document.body.scrollHeight;
+      let interval = setInterval(() => {
+          if (position >= target) {
+              clearInterval(interval);
+          } else {
+              position += 13; // Adjust speed
+              window.scrollTo(0, position);
+          }
+      }, 7); // Adjust time delay
+  }
+
+  scrollDown();
 
 
-        function scrollDown() {
-            let position = 0;
-            let target = document.body.scrollHeight;
-            let interval = setInterval(() => {
-                if (position >= target) {
-                    clearInterval(interval);
-                } else {
-                    position += 13; // Adjust speed
-                    window.scrollTo(0, position);
-                }
-            }, 7); // Adjust time delay
-        }
 
-        scrollDown();
+        
         
 
     }
