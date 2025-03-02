@@ -18,7 +18,7 @@ def CallHandler(request):
         #make api calls here
 
         #return HttpResponse(json.dumps({"password": password}))
-        return HttpResponse(json.dumps("it works"))
+        return HttpResponse(json.dumps({"Strengh":"Test Strengh Data", "Breaches": "Test Breachs", "AI": "Test AI Output"}))
     else:
         return HttpResponse("Not a POST Request")
 
