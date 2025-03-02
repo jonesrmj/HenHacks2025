@@ -4,6 +4,7 @@ import time
 import requests
 import hashlib
 import string
+import markdown
 from django.http import HttpResponse
 from dotenv import load_dotenv
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -105,7 +106,7 @@ def geminiAdvice(password):
         # Extract the suggestions from the response
         try:
             suggestions = response.json()['candidates'][0]['content']['parts'][0]['text']
-            return suggestions
+            return markdown.markdown(suggestions)
         except (KeyError, IndexError):
             return "Error: Unable to parse suggestions from Gemini API response."
     else:
