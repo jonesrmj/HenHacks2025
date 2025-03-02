@@ -20,10 +20,47 @@
         <h3>Enter a password to check it's strength, verify if it has appeared in any data leaks, and receive additonal feedback.</h3>
     </div>
     <form>
-        <input type="text" name="query" placeholder="Enter Password:" required>
+        <input type="text" id="pass" name="pass" placeholder="Enter Password:" required>
         <div style="margin-bottom: 15px;"></div>
-        <button type="submit">Enter </button>
+        <button type="button" onClick="getPassword()">Enter </button>
     </form>
+    <div id ="Summary"></div>
+    <div id ="DataDisplay"></div>
+    <br><br><br><br><br><br>
+    <div id ="Dataleaks"></div>
+    <div id ="Datainfo"></div>
+    <br><br><br><br><br><br>
+    <div id ="Suggestions"></div>
+    <div id ="Suggestioninfo"></div>
+
+    <script>
+        function getPassword() {
+        var password = document.getElementById("pass").value;
+        document.getElementById("Summary").innerHTML = "Summary:";
+        document.getElementById("DataDisplay").innerHTML = "Password Strenght:" + password;
+        document.getElementById("Dataleaks").innerHTML = "Data Leaks:";
+        document.getElementById("Datainfo").innerHTML = "Your password has appeared in" + password; + "data leaks"
+        document.getElementById("Suggestions").innerHTML = "Suggestions:";
+        document.getElementById("Suggestioninfo").innerHTML = "place holder"
+
+        window.scrollBy(0, 1); // Move down 1 pixel
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll back to top smoothly
+                    requestAnimationFrame(smoothScroll); // Restart scrolling
+                }, 1000);
+            } else {
+                requestAnimationFrame(smoothScroll); // Continue scrolling
+            }
+        }
+        
+        
+
+
+
+
+
+    </script>
 
         
 
